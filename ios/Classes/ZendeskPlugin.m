@@ -37,7 +37,12 @@
   } else if ([@"startChat" isEqualToString:call.method]) {
     [ZDCChat startChat:nil];
     result(@(true));
-  } else {
+  }
+  else if ([@"endChat" isEqualToString:call.method]) {
+      [ZDCChat endChat:nil];
+      result(@(true));
+    }
+    else {
     result(FlutterMethodNotImplemented);
   }
 }

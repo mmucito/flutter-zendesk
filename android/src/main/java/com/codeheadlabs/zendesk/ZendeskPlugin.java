@@ -38,6 +38,9 @@ public class ZendeskPlugin implements MethodCallHandler {
       case "startChat":
         handleStartChat(call, result);
         break;
+      case "endChat":
+        handleEndChat(call, result);
+        break;
       default:
         result.notImplemented();
         break;
@@ -76,6 +79,10 @@ public class ZendeskPlugin implements MethodCallHandler {
   private void handleStartChat(MethodCall call, Result result) {
     Intent intent = new Intent(mRegistrar.activeContext(), ZopimChatActivity.class);
     mRegistrar.activeContext().startActivity(intent);
+    result.success(true);
+  }
+
+  private void handleEndChat(MethodCall call, Result result) {
     result.success(true);
   }
 }

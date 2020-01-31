@@ -39,7 +39,7 @@
     result(@(true));
   }
   else if ([@"endChat" isEqualToString:call.method]) {
-      [ZDCChat endChat:nil];
+      [ZDCChat endChat];
       result(@(true));
     }
     else {
